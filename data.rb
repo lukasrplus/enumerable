@@ -82,21 +82,28 @@ load 'seeds.rb'
 # CHALLENGE 4
 # runs with a predefined method to check whether a category is empty
 
-  def checkcat(student)
-    categories = student.keys
-    categories.each do |category|
-      if  student[category] == nil
-        print ""
-      else
-        puts "#{category}: #{student[category]}"
-      end
-  end
-  end
+#   def checkcat(student)
+#     category_names = {
+#       "first_name" => "Firstname",
+#       "last_name" => "Lastname",
+#       "twitter" => "Twitter",
+#       "github" => "GitHub",
+#       "blog" => "Blog",
+#       "email" => "Email"}
+#     categories = student.keys
+#     categories.each do |category|
+#       if  student[category] == nil
+#         print ""
+#       else
+#         puts "#{category_names[category]}: #{student[category]}"
+#       end
+#   end
+#   end
 
 
-STUDENTS.each do |student|
-  checkcat(student)
-end
+# STUDENTS.each do |student|
+#   checkcat(student)
+# end
 
 # ********************
 
@@ -107,6 +114,44 @@ end
 
 
 
+# puts "Give me the first name:"
+# last = gets.chomp.downcase
+
+
+
+  def checkcat(student)
+    category_names = {
+      "first_name" => "Firstname",
+      "last_name" => "Lastname",
+      "twitter" => "Twitter",
+      "github" => "GitHub",
+      "blog" => "Blog",
+      "email" => "Email"}
+    categories = student.keys
+    categories.each do |category|
+      if  student[category] == nil
+        print ""
+      else
+
+        puts "#{category_names[category]}: #{student[category]}"
+
+      end
+  end
+  end
+
+
+def givecontact(student)
+results = STUDENTS.select { |person| person["first_name"].include?(student) || person["last_name"].include?(student) }
+results.each do |student|
+  puts "*" *40
+  checkcat(student)
+  puts "*" *40
+end
+end
+
+puts "Give me a name"
+student = gets.chomp
+givecontact(student)
 
 
 
