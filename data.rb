@@ -4,9 +4,118 @@ puts "\nLoading data for the previous TSL students.. "
 
 load 'seeds.rb'
 
-STUDENTS.each do |name|
-  puts "#{name}"
+# STUDENTS.each do |name|
+#   puts "#{name}"
+# end
+
+
+# puts STUDENTS.inspect
+
+
+# CHALLENGE 1 // DONE
+
+# STUDENTS.each do |student|
+#   if student["last_name"] == "Cabansag"
+#     puts "name: #{student["first_name"]} #{student["last_name"]}"
+#     puts "twitter: @#{student["twitter"]}"
+#     puts "github: #{student["github"]}"
+#     puts "blog: #{student["blog"]}"
+#     puts "email: #{student["email"]}"
+#   end
+# end
+
+# ********************
+
+# CHALLENGE 2 // DONE
+
+
+# STUDENTS.each do |student|
+
+#   if student["twitter"] == nil
+#     print student["twitter"]
+#   elsif student["twitter"].include?("@")
+#     puts student["twitter"]
+#   else
+#     puts "@" + student["twitter"]
+#   end
+
+# end
+
+
+# ********************
+
+# CHALLENGE 3
+
+# STUDENTS.each do |student|
+#     puts "name: #{student["first_name"]} #{student["last_name"]}"
+
+#   if student["twitter"] == nil
+#       print student["twitter"]
+#     else
+#       puts "twitter: #{student["twitter"]}"
+#     end
+
+#   if student["github"] == nil
+#       print student["github"]
+#     else
+#       puts "github: #{student["github"]}"
+#     end
+
+#   if student["blog"] == nil
+#       print student["blog"]
+#     else
+#       puts "blog: #{student["blog"]}"
+#     end
+
+#   if student["email"] == nil
+#       print student["email"]
+#     else
+#       puts "email: #{student["email"]}"
+#     end
+
+# end
+
+
+
+# ********************
+
+# CHALLENGE 4
+# runs with a predefined method to check whether a category is empty
+
+  def checkcat(student)
+    categories = student.keys
+    categories.each do |category|
+      if  student[category] == nil
+        print ""
+      else
+        puts "#{category}: #{student[category]}"
+      end
+  end
+  end
+
+
+STUDENTS.each do |student|
+  checkcat(student)
 end
+
+# ********************
+
+# CHALLENGE 5
+# Create a method to display the details of a student
+# Create a method to find a student by first name
+# Take into account that the data set may continue people with the same names
+
+
+
+
+
+
+
+
+
+
+
+# ********************
 
 
 
