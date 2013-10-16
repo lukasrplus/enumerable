@@ -119,6 +119,7 @@ load 'seeds.rb'
 
 
 
+
   def checkcat(student)
     category_names = {
       "first_name" => "Firstname",
@@ -132,16 +133,18 @@ load 'seeds.rb'
       if  student[category] == nil
         print ""
       else
-
         puts "#{category_names[category]}: #{student[category]}"
-
       end
   end
   end
 
 
 def givecontact(student)
-results = STUDENTS.select { |person| person["first_name"].include?(student) || person["last_name"].include?(student) }
+results = STUDENTS.select { |person| (person["first_name"].downcase).include?(student.downcase) || (person["last_name"].downcase).include?(student.downcase) }
+puts "-" *40
+puts "-" *40
+puts "I found #{results.count} results for you."
+puts "-" *40
 results.each do |student|
   puts "*" *40
   checkcat(student)
