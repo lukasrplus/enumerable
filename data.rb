@@ -108,17 +108,11 @@ load 'seeds.rb'
 # ********************
 
 # CHALLENGE 5
-# Create a method to display the details of a student
-# Create a method to find a student by first name
-# Take into account that the data set may continue people with the same names
 
 
 
-# puts "Give me the first name:"
-# last = gets.chomp.downcase
-
-
-
+# **************DEFINITION WHETHER CATEGORY IS EMPTY OR NOT (incl .keys method)*********************
+# styling is displayed be a self-defined hash
 
   def checkcat(student)
     category_names = {
@@ -138,9 +132,13 @@ load 'seeds.rb'
   end
   end
 
+# **************DEFINITION TO DISPLAY SEARCH RESULT (calls for "checkcat" method)*********************
+# includes a display of how many items have been found and some styling
+
 
 def givecontact(student)
 results = STUDENTS.select { |person| (person["first_name"].downcase).include?(student.downcase) || (person["last_name"].downcase).include?(student.downcase) }
+
 puts "-" *40
 puts "-" *40
 
@@ -162,9 +160,22 @@ results.each do |student|
 end
 end
 
+
+
+
+# **************ACTUAL CONTENT OF CODE(calls for "givecontact" method)*********************
+
+
 puts "Give me a name"
 student = gets.chomp
 givecontact(student)
+
+
+
+
+
+
+
 
 
 
