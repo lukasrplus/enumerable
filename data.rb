@@ -143,7 +143,17 @@ def givecontact(student)
 results = STUDENTS.select { |person| (person["first_name"].downcase).include?(student.downcase) || (person["last_name"].downcase).include?(student.downcase) }
 puts "-" *40
 puts "-" *40
-puts "I found #{results.count} results for you."
+
+
+  if results.count == 1
+    puts "I found #{results.count} result for you."
+  elsif results.count == 0
+    puts "I found no results for you."
+  else
+    puts "I found #{results.count} results for you."
+  end
+
+
 puts "-" *40
 results.each do |student|
   puts "*" *40
